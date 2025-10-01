@@ -1,0 +1,117 @@
+@import "../components/responsive.scss";
+.navbar {
+  display: flex;
+  height: 100px;
+  align-items: center;
+  justify-content: space-between;
+  color: rgb(0, 0, 0);
+  padding: 0 20px;
+  
+}
+.left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: flex-end;
+  height: 100%;
+  background-color: #fcf5f3;
+  padding-left: 2rem;
+
+  @include md {
+    background-color: transparent;
+  }
+
+  .menu-icon {
+    display: none;
+    z-index: 1001; // ensures it’s always above the menu
+    position: relative;
+    .menu-img {
+      height: 25px;
+      width: auto;
+      object-fit: contain;
+      cursor: pointer;
+      
+    }
+    @include sm {
+      display: inline;
+    }
+  }
+  .menu {
+    position: absolute;
+    top: 0;
+    right: -50%;
+    background-color: black;
+    color: white;
+    height: 100%;
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    padding-top: 100px;
+    transition: right 0.4s ease;
+    &.active {
+      right: 0;
+    }
+  }
+}
+.register {
+  background-color: #fece51;
+  padding: 10px;
+  align-items: center;
+  border-radius: 10%;
+  
+}
+a {
+  padding-top: 12px;
+  padding-bottom: 24px;
+  margin: 10px;
+  font-size: 0.1 rem;
+}
+.navlinks {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  
+}
+.nav-link {
+  transition: all 0.4s ease;
+  @include sm {
+    display: none;
+  }
+}
+.nav-link:hover {
+  scale: 1.05;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-img {
+  height: 55px;
+  width: auto;
+  object-fit: contain;
+}
+
+.logo-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  @include md {
+    display: none;
+  }
+  @include sm {
+    display: flex;
+  }
+}
