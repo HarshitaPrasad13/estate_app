@@ -23,7 +23,8 @@
     max-width: 100%;
   }
   .page-contents{
-    flex: 1;
+    
+    height: calc(100vh - 100px);
   }
 }
 

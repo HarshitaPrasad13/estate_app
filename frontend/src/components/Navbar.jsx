@@ -3,6 +3,7 @@ import "./Navbar.scss";
 import logo from "../assets/logo.png";
 import menu from "../assets/menu.png";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 
 const Navbar = () => {
@@ -12,37 +13,37 @@ const Navbar = () => {
       <div className="left">
         <ul className="navlinks">
           <li>
-            <a href="/">
+            <Link to="/">
               <div className="logo-container">
                 <img src={logo} alt="logo" className="logo-img"></img>
                 <h2 className="logo-text"> EstateFlow </h2>
               </div>
-            </a>
+            </Link>
           </li>
 
           <li className="nav-link">
-            <a href="/">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li className="nav-link">
-            <a href="/">About</a>
+            <Link to="/">About</Link>
           </li>
           <li className="nav-link">
-            <a href="/">Contact</a>
+            <Link to="/">Contact</Link>
           </li>
           <li className="nav-link">
-            <a href="/">Agents</a>
+            <Link to="/">Agents</Link>
           </li>
         </ul>
       </div>
       <div className="right">
         <ul className="navlinks">
           <li className="nav-link">
-            <a href="/">Sign-In</a>
+            <Link to="/">Sign-In</Link>
           </li>
           <li className="nav-link">
-            <a href="/" className="register">
+            <Link to="/" className="register">
               Sign-Up
-            </a>
+            </Link>
           </li>
           <li>
             <div className="menu-icon">
@@ -50,12 +51,12 @@ const Navbar = () => {
             </div>
           </li>
           <div className= {open? "menu active" : "menu"}>
-            <a href="/">Home</a>
-            <a href="/">About</a>
-            <a href="/">Contact</a>
-            <a href="/">Agents</a>
-            <a href="/">Sign-In</a>
-            <a href="/">Sign-Up</a>
+            <Link to="/">Home</Link>
+            <Link to="/">About</Link>
+            <Link to="/">Contact</Link>
+            <Link to="/">Agents</Link>
+            <Link to="/">Sign-In</Link>
+            <Link to="/">Sign-Up</Link>
           </div>
         </ul>
       </div>
