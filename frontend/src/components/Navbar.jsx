@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const[open,setOpen]=useState(false);
+  const user = true;
+
   return (
     <div className="navbar">
       <div className="left">
@@ -37,14 +39,26 @@ const Navbar = () => {
       </div>
       <div className="right">
         <ul className="navlinks">
-          <li className="nav-link">
-            <Link to="/">Sign-In</Link>
-          </li>
-          <li className="nav-link">
-            <Link to="/" className="register">
-              Sign-Up
-            </Link>
-          </li>
+          {user ? (
+            <div className="user">
+              <img src="/pp.png"></img>
+              <span>John Doe</span>
+              <Link to="/profile" className="profile">
+              <div className="notification">
+                3
+              </div>
+              <span>Profile</span></Link>
+            </div>
+          ) : (
+            <>
+              <li className="nav-link">
+                <Link to="/">Sign-In</Link>
+              </li>
+              <li className="nav-link">
+                <Link to="/" className="register">Sign-Up</Link>
+              </li>
+            </>
+          )}
           <li>
             <div className="menu-icon">
               <img src={menu} alt="" className="menu-img" onClick={()=>setOpen(!open)}></img>
